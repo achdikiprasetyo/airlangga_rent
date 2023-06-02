@@ -21,7 +21,8 @@
       }
         
       .nav-item.active {
-        color: green;
+        color: red !important;
+        
       }
       .logo {
           width: 100px;
@@ -86,6 +87,7 @@
       <li class="nav-item <?php echo ($page == 'hubungi_kami.php') ? 'active' : ''; ?>">
         <a class="nav-link nav-link-custom" href="hubungi_kami.php">HUBUNGI KAMI</a>
       </li>
+
     </ul>
   </div>
 </nav>

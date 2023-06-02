@@ -13,28 +13,34 @@
     align-items: center;
   }
 
+
+  p{
+    color: wheat;
+    text-size-adjust: 100px;
+    
+  }
+
   .image-content {
     color: #fff;
     font-size: 24px;
     padding: 20px;
     top : 50%;
+    left: 5%;
     position: absolute;
   }
   h1{
     font-weight: bold;
   }
   .home-button {
-            background-color:  #FF0000;
-            color: #fff;
-            border-radius: 10px;
-            padding: 10px 65px;
-            width: 200px;
-            text-align: center;
-            font-size: 16px;
-            margin-left: 20px;
-        }
-
-
+    background-color:  #FF0000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 65px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 20px;
+  }
 </style>
 
 <div class="background-image">
@@ -47,4 +53,5 @@
 
 
 </body>
+<?php include 'footer.php'; ?>
 </html>
