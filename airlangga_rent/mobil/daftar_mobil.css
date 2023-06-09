@@ -1,0 +1,310 @@
+/*====================
+	1. General code
+==========================*/
+*, html, body{
+    margin: 0;
+    padding: 0;
+}
+body {
+	font-family: 'Lato', sans-serif;
+	margin:0px;
+	padding:0px !important;
+	overflow-x:hidden;
+	color:#555555;
+}
+/* ----------------
+    2. Header      
+  -----------------*/
+  a.nav-link-custom {
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f2f2f2;   
+}
+  
+.nav-item.active {
+  color: red !important;
+  
+}
+.logo {
+    width: 100px;
+    height: 56px;
+}
+
+.logo img {
+    width: 120px;
+    height: 56px;
+}
+
+.social-follow {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 0;
+  vertical-align: middle;
+}
+.social-follow ul {
+    padding:0px;
+    margin:0px;
+}
+.social-follow ul li {
+    display:inline-block;
+    vertical-align:middle;
+    list-style:none;
+    margin:0px;
+}
+.social-follow ul li a {
+    display:block;
+    font-size:25px;
+    color:#555;
+}
+.social-follow li i {
+  margin-right: 5px;
+}
+
+.login-register-button {
+    background-color:  #FF0000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 171px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 10px;
+}
+.login_btn {
+    margin:2px;
+  background-color:  #FF0000;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 171px;
+  text-align: center;
+  font-size: 16px;          
+  margin-left: 10px;
+}
+
+.login_btn a {
+  
+  font-family: 'Inter';
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login_btn .btn.btn-xs {
+    font-size:10px;
+    padding:0 15px
+}
+
+/*-----------------
+	3. Footer
+-------------------*/
+.footer-top {
+    background: #222222 none repeat scroll 0 0;
+    color: #9d9d9d;
+    padding: 80px 0;
+  }
+  .footer-top h6 {
+    color: #ffffff;
+    font-size:15px;
+    text-transform:uppercase;
+    margin-bottom: 40px;
+  }
+  .footer-top ul {
+    overflow: hidden;
+    padding: 0;
+  }
+  .footer-top ul li {
+    font-size: 14px;
+    line-height: 23px;
+    list-style: outside none none;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    position: relative;
+  }
+  .footer-top ul li a::after {
+    content: "";
+    font-family: fontawesome;
+    left: 0;
+    position: absolute;
+    vertical-align: middle;
+  }
+  .footer-top ul li a {
+    color: #fff;
+  }
+  input.newsletter-input {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    font-size: 13px;
+    text-align: left;
+  }
+  .subscribed-text {
+    color: #606060;
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 10px;
+  }
+  .footer-bottom {
+    background: #191919 none repeat scroll 0 0;
+    padding: 22px 0;
+  }
+    .footer-bottom .footer_widget {
+	margin:0 30px 0 0;
+  }
+  .footer_widget {
+    color: #ffffff;
+    display: inline-block;
+    margin: 6px 0 0 30px;
+  }
+  .footer_widget p {
+      display:inline-block;
+      vertical-align:right;
+      margin:0px;
+  }
+  .footer_widget ul  {
+      display:inline-block;
+      padding:0px;
+      vertical-align:middle;
+      margin:0px 0 0 8px;
+  }
+  .footer_widget ul li {
+      display:inline-block;
+      vertical-align:middle;
+      list-style:none;
+      margin:0 auto;
+  }
+  .footer_widget ul li a {
+      color:#fff;
+      display:block;
+      font-size:18px;
+      margin:0 4px;
+  }
+  .footer_widget ul li a i {
+      margin:0px;
+  }
+  .copy-right {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 40px;
+    margin: 0 auto;
+  }
+  .back-top {
+    bottom: 35px;
+    position: fixed;
+    right: 33px;
+    z-index: 1;
+  }
+  .back-top a {
+    border-radius: 50%;
+    color: #ffffff;
+    display: block;
+    font-size: 19px;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    vertical-align: top;
+    width: 40px;
+  }
+  .back-top a:hover, .back-top a:focus {
+      color:#fff;
+  }
+
+  /* Background tampilan home */
+  .background-image {
+    background-image: url('bgHome.jpg');
+    background-repeat: no-repeat;
+    background-position:right;
+    background-size: cover;
+    min-height: 800px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+
+  p{
+    color:ffff
+    ;
+    text-size-adjust: 100px;
+    
+  }
+
+  .image-content {
+    color: #fff;
+    font-size: 24px;
+    padding: 20px;
+    top : 50%;
+    left: 5%;
+    position: absolute;
+  }
+  h1{
+    font-weight: bold;
+  }
+  .home-button {
+    background-color:  #FF0000;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 65px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+/* hubungi kami */
+  .peta{
+    height: 390px;
+    background-image: url(bg.jpg);
+  }
+
+  .peta h1{
+    font-size: 32px;
+    text-align: center;
+    color: #FFFFFF;
+    padding-top: 100px;
+    font-family: inter;
+  }
+
+  .spasi-lebar {
+    width: 100%;
+    position: absolute;
+    right: 20px;
+    font-family: inter;
+    text-align: center;
+    white-space: pre;
+    color: white;
+    font-size: 20px;
+}
+
+.kontak{
+    font-family: Inter;
+    font-size: 32px;
+    padding-left: 90px;
+}
+
+.isi{
+    width: 100%;
+    height: 150px;
+}
+
+.isi table{
+    padding-top: 30px;
+    padding-left: 80px;
+}
+
+.isi table td{
+    font-family: inter;
+    padding: 15px 10px;
+}
+
+.isi table td a{
+    color: black;
+    text-decoration: none;
+    font-family: inter;
+}

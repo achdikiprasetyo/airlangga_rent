@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 $merk = $_POST["merk"];
 $noPlat = $_POST["no_plat"];
@@ -22,7 +22,7 @@ if ($resultLastId->num_rows > 0) {
 }
 
 // Menyimpan foto mobil
-$fotoMobilPath = "foto_mobil/" . $idMobil . ".jpg";
+$fotoMobilPath = "../foto_mobil/" . $idMobil . ".jpg";
 move_uploaded_file($fotoMobil, $fotoMobilPath);
 
 

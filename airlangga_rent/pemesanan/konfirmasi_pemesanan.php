@@ -1,5 +1,6 @@
-<?php include 'header.php'; ?>
-<?php include 'koneksi.php'; ?>
+
+<?php include '../template/header.php'; ?>
+<?php include '../koneksi.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -232,3 +233,6 @@
 
 </body>
 </html>
+<?php include '../template/footer.php'; ?>
+
+

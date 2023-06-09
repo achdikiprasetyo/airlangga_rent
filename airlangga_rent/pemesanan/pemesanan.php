@@ -1,9 +1,9 @@
 <?php
 ob_start(); // Memulai output buffer
 
-include 'bootstrap.php';
-include 'header.php';
-include 'koneksi.php';
+
+include '../template/header.php';
+include '../koneksi.php';
 ?>
 
 <style>
@@ -81,10 +81,15 @@ include 'koneksi.php';
 
     h1{
         margin-left: 16px;
+
+    }
+
+    form{
+        padding: 30px 0px 30px 0px;
     }
 
 </style>
-    <br>
+    
     <h1>Detail Penyewaan</h1>
     
 <?php
@@ -165,3 +170,4 @@ if (isset($_GET['id_mobil'])) {
 
 ob_end_flush(); // Mengakhiri output buffer
 ?>
+<?php include '../template/footer.php'; ?>

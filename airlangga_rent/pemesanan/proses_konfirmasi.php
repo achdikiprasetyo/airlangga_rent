@@ -1,5 +1,5 @@
-<?php include 'koneksi.php'?>
-<?php include 'header.php'?>
+
+<?php include '../template/header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $metodePembayaran = $_POST['metode_pembayaran'];
             //mengambil total harga dari page konfirmasi_pesanan
-            $hargaTotal = $_GET['harga_total'];
+            $hargaTotal = $_POST['harga_total'];
 
             echo "<hr>";
             if ($metodePembayaran == "Cash") {

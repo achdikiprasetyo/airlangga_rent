@@ -1,3 +1,4 @@
+<?php include 'header_admin.php';?>
 <!DOCTYPE html>
 <html>
 <head>
