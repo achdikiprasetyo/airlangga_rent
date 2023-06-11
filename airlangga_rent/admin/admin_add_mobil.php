@@ -4,126 +4,98 @@
 <head>
     <title>Input dan Output Mobil</title>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 20px;
+    }
 
-h1 {
-    color: #333;
-    text-align: center;
-}
+    h1 {
+        color: #333;
+    }
 
-table {
-    width: 400px;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background-color: #f8f8f8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        width: auto;
+        margin: 0 auto;
+    }
 
-table tr {
-    border-bottom: 1px solid #ddd;
-}
+    label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
 
-table th,
-table td {
-    padding: 10px;
-}
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
 
-table th {
-    text-align: left;
-    background-color: #f2f2f2;
-    color: #333;
-}
+    input[type="file"] {
+        margin-top: 10px;
+    }
 
-input[type="text"],
-input[type="number"],
-select {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-input[type="file"] {
-    width: 100%;
-    padding: 5px;
-}
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
 
-input[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #45a049;
-}
-    </style>
 </head>
 <body>
     <h1>Input Mobil Baru</h1>
     <form action="simpan_mobil.php" method="post" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <th><label for="merk">Merk:</label></th>
-                <td><input type="text" name="merk" required></td>
-            </tr>
 
-            <tr>
-                <th><label for="no_plat">No. Plat:</label></th>
-                <td><input type="text" name="no_plat" required></td>
-            </tr>
+                <label for="merk">Merk:</label>
+                <input type="text" name="merk" required>
 
-            <tr>
+                <label for="no_plat">No. Plat:</label>
+                <input type="text" name="no_plat" required>
+
                 <th><label for="stok">Stok:</label></th>
-                <td><input type="number" name="stok" required></td>
-            </tr>
-
-            <tr>
+                <input type="number" name="stok" required>
+            
                 <th><label for="kapasitas">Kapasitas:</label></th>
                 <td><input type="number" name="kapasitas" required></td>
-            </tr>
+            
+                <label for="tahun">Tahun:</label>
+                <input type="number" name="tahun" required>
 
-            <tr>
-                <th><label for="tahun">Tahun:</label></th>
-                <td><input type="number" name="tahun" required></td>
-            </tr>
+                <label for="harga">Harga:</label>
+                <input type="number" name="harga" required>
 
-            <tr>
-                <th><label for="harga">Harga:</label></th>
-                <td><input type="number" name="harga" required></td>
-            </tr>
-
-            <tr>
-                <th><label for="status">Status:</label></th>
-                <td>
+                <label for="status">Status:</label>
                     <select name="status" required>
                         <option value="Tersedia">Tersedia</option>
                         <option value="Disewakan">Disewakan</option>
                     </select>
-                </td>
-            </tr>
 
-            <tr>
-                <th><label for="jenis_bahan_bakar">Jenis Bahan Bakar:</label></th>
-                <td><input type="text" name="jenis_bahan_bakar" required></td>
-            </tr>
+                <label for="jenis_bahan_bakar">Jenis Bahan Bakar:</label>
+                <input type="text" name="jenis_bahan_bakar" required>
 
-            <tr>
-                <th><label for="foto_mobil">Foto Mobil:</label></th>
-                <td><input type="file" name="foto_mobil" required></td>
-            </tr>
+                <label for="foto_mobil">Foto Mobil:</label>
+                <input type="file" name="foto_mobil" required>
 
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Tambah Mobil">
-                </td>
-            </tr>
-        </table>
+                <input type="submit" value="Tambah Mobil">
     </form>
 </body>
 </html>
