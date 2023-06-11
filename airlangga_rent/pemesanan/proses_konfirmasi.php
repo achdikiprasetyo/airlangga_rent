@@ -1,4 +1,3 @@
-
 <?php include '../template/header.php'; ?>
 
 <!DOCTYPE html>
@@ -32,14 +31,13 @@
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $metodePembayaran = $_POST['metode_pembayaran'];
-            //mengambil total harga dari page konfirmasi_pesanan
-            $hargaTotal = $_POST['harga_total'];
+            $hargaTotal = isset($_POST['harga_total']) ? intval($_POST['harga_total']) : 0;
+            $biayaPengiriman = isset($_POST['biaya_pengiriman']) ? intval($_POST['biaya_pengiriman']) : 0;
+            $totalHarga = $hargaTotal + $biayaPengiriman;
 
             echo "<hr>";
             if ($metodePembayaran == "Cash") {
-                
                 echo "Metode Pembayaran: Cash";
-                
             } elseif ($metodePembayaran == "Transfer") {
                 echo "Metode Pembayaran: Transfer";
                 echo "<table>";
@@ -55,24 +53,19 @@
                 echo "        <td>Shopepay : </td>";
                 echo "        <td>082247424827</td>";
                 echo "    </tr>";
-                
-                
-                echo "</table>       ";
+                echo "</table>";
             } else {
                 echo "Metode Pembayaran tidak valid.";
             }
             echo "<hr>";
             echo "<br>";
-            echo "<h3 id='hargaTotal' >Total Harga yang harus di bayar:  Rp $hargaTotal ,-</h3>";
+            echo "<h3 id='hargaTotal'>Total Harga yang harus dibayar:  Rp $totalHarga,-</h3>";
 
             echo "<h3>Kirim bukti pemesanan / pembayaran disini : </h3>";
             echo "<br>";    
             echo '<a href="https://wa.me/6282247424826">Kirim Bukti Pembayaran</a>';
-            
         }
         ?>
     </div>
-    
 </body>
 </html>
-

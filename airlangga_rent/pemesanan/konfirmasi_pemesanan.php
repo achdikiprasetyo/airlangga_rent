@@ -122,8 +122,6 @@
             $queryUpdateHargaTotal = "UPDATE pemesanan SET harga_total = $hargaTotal, metode_pembayaran = '$metode_pembayaran' WHERE id_pemesanan = $idPemesanan";
             $conn->query($queryUpdateHargaTotal);
 
-            
-
             if ($resultMobil->num_rows > 0) {
                 $rowMobil = $resultMobil->fetch_assoc();
 
@@ -154,7 +152,7 @@
                 echo "<p>Tanggal Selesai: $tglSelesai</p>";
                 echo "<hr>";
 
-                //xhexkbox untuk biaya pengiriman ketika
+                //checkbox untuk biaya pengiriman
                 echo '<input type="checkbox" id="iya" onchange="updateHargaTotal()">';
                 echo '<label for="iya">Mobil Di Antar ke Alamat Rumah</label>';
                 echo '<h1>Metode Pembayaran</h1>';
@@ -190,10 +188,9 @@
                 echo "        </tr>";
                 echo "    </table>";
                 
-
-                
                 echo "    <input type='hidden' name='id_pemesanan' value='$idPemesanan'>";
                 echo "<input type='hidden' name='harga_total' value='" . $hargaTotal . "'>";
+                echo "<input type='hidden' name='biaya_pengiriman' value='0' id='biayaPengirimanInput'>";
 
                 echo "    <input type='submit' value='Konfirmasi Pemesanan' class='tombol'>";
                 echo "</form>";
@@ -208,27 +205,30 @@
     }
     ?>
 
-     
     <script>
-    //fungsi agar ketika checkbox di centang langsung berubah hargatotal
-    function updateHargaTotal() {
-        var hargaTotal = <?php echo $hargaTotal; ?>;
-        var biayaPengiriman = 75000; 
+        function updateHargaTotal() {
+            var hargaTotal = <?php echo $hargaTotal; ?>;
+            var biayaPengiriman = 75000;
 
-        var checkbox = document.getElementById("iya");
-        var hargaTotalElement = document.getElementById("hargaTotal");
-        var biayaPengirimanElement = document.getElementById("biayaPengiriman");
-        var totalElement = document.getElementById("total");
+            var checkbox = document.getElementById("iya");
+            var hargaTotalElement = document.getElementById("hargaTotal");
+            var biayaPengirimanElement = document.getElementById("biayaPengiriman");
+            var totalElement = document.getElementById("total");
+            var biayaPengirimanInput = document.getElementById("biayaPengirimanInput");
 
-        if (checkbox.checked) {
-            hargaTotal += biayaPengiriman;
+            if (checkbox.checked) {
+                hargaTotal += biayaPengiriman;
+                biayaPengirimanElement.innerText = biayaPengiriman;
+                totalElement.innerText = hargaTotal;
+                biayaPengirimanInput.value = biayaPengiriman;
+            } else {
+                hargaTotal -= biayaPengiriman;
+                biayaPengirimanElement.innerText = "0";
+                totalElement.innerText = hargaTotal;
+                biayaPengirimanInput.value = "0";
+            }
         }
-
-        hargaTotalElement.innerText = Math.max(hargaTotal, 0);
-        biayaPengirimanElement.innerText = checkbox.checked ? biayaPengiriman : 0;
-        totalElement.innerText = Math.max(hargaTotal, 0);
-    }
-</script>
+    </script>
 
 
 </body>
