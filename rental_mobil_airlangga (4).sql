@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2023 at 08:18 AM
+-- Generation Time: Jun 11, 2023 at 03:12 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -34,6 +34,34 @@ CREATE TABLE `admin` (
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_admin`, `nama`, `email`, `password`) VALUES
+(0, 'diki', 'diki@gmail.com', 'diki');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `akun_user`
+--
+
+CREATE TABLE `akun_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `akun_user`
+--
+
+INSERT INTO `akun_user` (`id`, `username`, `email`, `alamat`, `password`) VALUES
+(1, 'diki', 'diki@gmail.com', 'sepande', '43b93443937ea642a9a43e77fd5d8f77');
+
 -- --------------------------------------------------------
 
 --
@@ -59,8 +87,8 @@ CREATE TABLE `mobil` (
 --
 
 INSERT INTO `mobil` (`id_mobil`, `merk`, `no_plat`, `stok`, `kapasitas`, `tahun`, `harga`, `status`, `id_admin`, `jenis_bahan_bakar`, `foto_mobil`) VALUES
-(1, 'Toyota GTR', 'W 2341 N', 13, 4, 2019, 20000, 'Tersedia', NULL, 'OLI', 0x666f746f5f6d6f62696c2f312e6a7067),
-(2, 'SUSUKI', ' QWERWQ', 4, 2, 23223, 100090, 'Tersedia', NULL, '12', 0x666f746f5f6d6f62696c2f322e6a7067);
+(2, 'nwq', '12hj', 2, 4, 2019, 200000, 'Tersedia', NULL, 'olinol', 0x2e2e2f666f746f5f6d6f62696c2f322e6a7067),
+(3, 'yanto', '12hj', 2, 4, 2019, 200000, 'Tersedia', NULL, 'olinol', 0x2e2e2f666f746f5f6d6f62696c2f332e6a7067);
 
 -- --------------------------------------------------------
 
@@ -102,26 +130,33 @@ CREATE TABLE `pemesanan` (
 --
 
 INSERT INTO `pemesanan` (`id_pemesanan`, `id_user`, `id_mobil`, `id_admin`, `tgl_pesan`, `tgl_selesai`, `pengantaran`, `waktu_pengantaran`, `alamat_pengantaran`, `biaya_tambahan`, `metode_pembayaran`, `harga_total`) VALUES
-(21, NULL, 2, NULL, '2023-05-23', '2023-05-30', 'Ya', NULL, NULL, 0, 'Transfer', 0),
 (22, NULL, 1, NULL, '2023-05-27', '2023-05-29', 'Ya', NULL, NULL, 0, 'Transfer', 0),
-(23, NULL, 2, NULL, '2023-05-18', '2023-05-27', 'Ya', NULL, NULL, 0, 'Transfer', 0),
-(24, NULL, 2, NULL, '2023-05-17', '2023-05-27', 'Ya', NULL, NULL, 0, 'Transfer', 0),
 (25, NULL, 1, NULL, '2023-05-27', '2023-05-31', 'Ya', NULL, NULL, 0, 'Transfer', 0),
 (26, NULL, 1, NULL, '2023-06-02', '2023-06-09', 'Ya', NULL, NULL, 0, 'Transfer', 0),
-(27, NULL, 2, NULL, '2023-06-21', '2023-06-30', 'Ya', NULL, NULL, 0, 'Transfer', 0),
-(28, NULL, 2, NULL, '2023-06-02', '2023-06-09', 'Ya', NULL, NULL, 0, 'Transfer', 0),
 (29, NULL, 1, NULL, '0000-00-00', '0000-00-00', 'Ya', NULL, NULL, 0, 'Transfer', 0),
 (30, NULL, 1, NULL, '2023-06-02', '2023-06-07', 'Ya', NULL, NULL, 0, 'Transfer', 0),
 (31, NULL, 1, NULL, '2023-06-02', '2023-06-22', 'Ya', NULL, NULL, 0, 'Transfer', 400000),
 (32, NULL, 1, NULL, '2023-06-02', '2023-06-23', 'Ya', NULL, NULL, 0, 'Transfer', 420000),
 (33, NULL, 1, NULL, '2023-06-02', '2023-06-30', 'Ya', NULL, NULL, 0, 'Transfer', 560000),
 (34, NULL, 1, NULL, '2023-06-02', '2023-06-15', 'Ya', NULL, NULL, 0, 'Transfer', 260000),
-(35, NULL, 2, NULL, '2023-06-02', '2023-06-08', 'Ya', NULL, NULL, 0, 'Transfer', 0),
-(36, NULL, 2, NULL, '2023-06-02', '2023-06-10', 'Ya', NULL, NULL, 0, 'Transfer', 0),
-(37, NULL, 2, NULL, '2023-06-06', '2023-06-17', 'Ya', NULL, NULL, 0, 'Transfer', 1100990),
 (38, NULL, 1, NULL, '2023-06-02', '2023-06-04', 'Ya', NULL, NULL, 0, 'Transfer', 40000),
 (39, NULL, 1, NULL, '2023-06-02', '2023-06-04', 'Ya', NULL, NULL, 0, 'Transfer', 40000),
-(40, NULL, 1, NULL, '2023-06-02', '2023-06-09', 'Ya', NULL, NULL, 0, 'Transfer', 140000);
+(40, NULL, 1, NULL, '2023-06-02', '2023-06-09', 'Ya', NULL, NULL, 0, 'Transfer', 140000),
+(41, NULL, 1, NULL, '2023-06-03', '2023-06-11', 'Ya', NULL, NULL, 0, 'Transfer', 160000),
+(42, NULL, 1, NULL, '2023-06-07', '2023-06-11', 'Ya', NULL, NULL, 0, 'Transfer', 80000),
+(43, NULL, 1, NULL, '2023-06-07', '2023-06-14', 'Ya', NULL, NULL, 0, 'Transfer', 140000),
+(45, NULL, 1, NULL, '2023-06-07', '2023-06-14', 'Ya', NULL, NULL, 0, 'Transfer', 140000),
+(51, NULL, 1, NULL, '2023-06-07', '2023-06-20', 'Ya', NULL, NULL, 0, 'Transfer', 260000),
+(53, NULL, 2, NULL, '2023-06-07', '2023-06-20', 'Ya', NULL, NULL, 0, 'Transfer', 2600000),
+(54, NULL, 2, NULL, '2023-06-09', '2023-06-11', 'Ya', NULL, NULL, 0, 'Transfer', 400000),
+(55, NULL, 3, NULL, '2023-06-09', '2023-06-21', 'Ya', NULL, NULL, 0, 'Transfer', 2400000),
+(56, NULL, 2, NULL, '2023-06-09', '2023-06-19', 'Ya', NULL, NULL, 0, 'Transfer', 2000000),
+(57, NULL, 2, NULL, '2023-06-09', '2023-06-11', 'Ya', NULL, NULL, 0, 'Transfer', 400000),
+(58, NULL, 2, NULL, '2023-06-10', '2023-06-12', 'Ya', NULL, NULL, 0, 'Transfer', 400000),
+(59, NULL, 3, NULL, '2023-06-11', '2023-06-18', 'Ya', NULL, NULL, 0, 'Transfer', 1400000),
+(60, NULL, 2, NULL, '2023-06-11', '2023-06-27', 'Ya', NULL, NULL, 0, 'Transfer', 3200000),
+(61, NULL, 3, NULL, '2023-06-11', '2023-06-12', 'Ya', NULL, NULL, 0, 'Transfer', 200000),
+(62, NULL, 3, NULL, '2023-06-11', '2023-06-28', 'Ya', NULL, NULL, 0, 'Transfer', 3400000);
 
 -- --------------------------------------------------------
 
@@ -137,6 +172,14 @@ CREATE TABLE `pengembalian` (
   `kondisi_mobil` varchar(255) DEFAULT NULL,
   `denda` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pengembalian`
+--
+
+INSERT INTO `pengembalian` (`id_pengembalian`, `id_pemesanan`, `id_admin`, `tgl_kembali`, `kondisi_mobil`, `denda`) VALUES
+(1, 22, 0, '2023-06-09', 'rusak', 5000),
+(2, 34, 0, '2023-05-30', 'wdsd', 2222);
 
 -- --------------------------------------------------------
 
@@ -162,6 +205,12 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `akun_user`
+--
+ALTER TABLE `akun_user`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `mobil`
@@ -207,10 +256,22 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `akun_user`
+--
+ALTER TABLE `akun_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+
+--
+-- AUTO_INCREMENT for table `pengembalian`
+--
+ALTER TABLE `pengembalian`
+  MODIFY `id_pengembalian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
