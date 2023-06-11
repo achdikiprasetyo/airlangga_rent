@@ -76,7 +76,12 @@
   color: #333;
   text-align: center;
 }
-
+    
+.col-md-6{
+    height: auto;
+    width: 1000px;
+}
+    
 </style>
 
 </head>
