@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 <style>
 .page-header {
     background-image: url("bg.jpg");
@@ -38,12 +39,16 @@
 
   .about-us {
   padding: 60px 0;
-  background-color: #f8f8f8;
+  background-color: #ffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .about-us .row {
@@ -65,17 +70,53 @@
   text-align: center;
 }
 
-.about-us:hover {
-  background-color: #e2e2e2;
+
+.coustom-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
-.about-us:hover h2 {
-  color: black;
+.coustom-breadcrumb li {
+  display: inline-block;
+  margin: 0 5px;
 }
 
-.about-us:hover p {
-  color: black;
+.coustom-breadcrumb li a {
+  text-decoration: none;
+  color: #fff !important;
+  font-weight: bold;
 }
+
+.coustom-breadcrumb li a:hover {
+  text-decoration: none;
+  color: grey!important;
+}
+
+.coustom-breadcrumb li::after {
+  display: inline-block;
+  margin: 0 5px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.coustom-breadcrumb li:last-child::after {
+  content: none;
+}
+
+.col-md-6 {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 </style>
 
@@ -88,8 +129,9 @@
         <h1>Tentang Kami</h1>
       </div>
       <ul class="coustom-breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li>Tentang Kami</li>
+        <li><a href="../home/home.php" style="color: white;">Home</a></li>
+        <li style="color: white;">></li>
+        <li style="color: white;">Tentang Kami</li>
       </ul>
     </div>
   </div>
@@ -109,3 +151,5 @@ asi rental mobil "Airlangga" berbasis website. Aplikasi ini dirancang untuk memu
   </div>
 </section>
 <?php include '../template/footer.php'; ?>
+</body>
+</html>

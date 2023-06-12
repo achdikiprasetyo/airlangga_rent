@@ -1,4 +1,3 @@
-
 <?php include '../template/header.php'; ?>
 <?php include '../koneksi.php'; ?>
 
@@ -17,13 +16,6 @@
             margin: 20px;
             font-weight: bold;
             border-bottom: 10px;
-        }
-
-        .garis-tebal {
-            display: block;
-            top: 10px;
-            background-color: black;
-            border-bottom: 10px solid black;
         }
 
         label {
@@ -147,16 +139,13 @@
                 echo "    </div>";
                 echo "</div>";
 
-                echo "<hr>";
                 echo "<p>Tanggal Pesan: $tglPesan</p>";
                 echo "<p>Tanggal Selesai: $tglSelesai</p>";
-                echo "<hr>";
 
                 //checkbox untuk biaya pengiriman
                 echo '<input type="checkbox" id="iya" onchange="updateHargaTotal()">';
                 echo '<label for="iya">Mobil Di Antar ke Alamat Rumah</label>';
                 echo '<h1>Metode Pembayaran</h1>';
-                echo '<hr>';
 
                 //metode pembayaran
                 echo '<div class="kotak-abu">';
@@ -176,7 +165,7 @@
                 echo "    <table>";
                 echo "        <tr>";
                 echo "            <td>Subtotal</td>";
-                echo "            <td id='hargaTotal'>$hargaTotal;</td>";
+                echo "            <td id='hargaTotal'>$hargaTotal</td>";
                 echo "        </tr>";
                 echo "        <tr>";
                 echo "            <td>Biaya Pengiriman</td>";
@@ -234,5 +223,3 @@
 </body>
 </html>
 <?php include '../template/footer.php'; ?>
-
-

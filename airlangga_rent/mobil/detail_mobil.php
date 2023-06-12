@@ -15,6 +15,7 @@ if (!isset($_SESSION['username'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Mobil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <style>
         .car-container {
             display: flex;
@@ -24,23 +25,48 @@ if (!isset($_SESSION['username'])) {
         .car-image {
             margin-right: 20px;
         }
-        .btnsewa a{
+        .car-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .car-details h3 {
+            margin: 0;
+        }
+        .car-details p {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+        }
+        .car-details p i {
+            margin-right: 8px;
+        }
+        .btn-sewa {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -30px;
+            position: absolute;
+            top: 425px; /* Sesuaikan dengan tinggi navbar Anda */
+            right: 20px; /* Sesuaikan dengan jarak dari tepi kanan */
+        }
+        .btn-sewa a {
             background-color: red;
             color: white;
             border: none;
             border-radius: 5px;
-            padding: 8px 40px;
+            padding: 8px 20px;
             font-size: 16px;
-            margin-left: 16px;
             cursor: pointer;
-            margin-top: 10px;
             color: aliceblue;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-sewa a:hover {
+            background-color: darkred;
         }
         .car-image img {
             max-width: 560px;
             height: auto;
             margin-left: 16px;
-            
         }
     </style>
     <?php include '../template/header.php'; ?>
@@ -71,15 +97,15 @@ if (!isset($_SESSION['username'])) {
             echo "    </div>";
             echo "    <div class='car-details'>";
             echo "        <h3>$merk</h3>";
-            echo "        <p>No. Plat: $noPlat</p>";
-            echo "        <p>Stok: $stok</p>";
-            echo "        <p>Kapasitas: $kapasitas</p>";
-            echo "        <p>Tahun: $tahun</p>";
-            echo "        <p>Harga: $harga</p>";
-            echo "        <p>Status: $status</p>";
-            echo "        <p>Jenis Bahan Bakar: $jenisBahanBakar</p>";
-            echo "        <div class='btnsewa'>";
-            echo "        <a href='../pemesanan/pemesanan.php?id_mobil=$idMobil'>Sewa</a>";
+            echo "        <p><i class='fas fa-car'></i> No. Plat: $noPlat</p>";
+            echo "        <p><i class='fas fa-cubes'></i> Stok: $stok</p>";
+            echo "        <p><i class='fas fa-users'></i> Kapasitas: $kapasitas</p>";
+            echo "        <p><i class='fas fa-calendar'></i> Tahun: $tahun</p>";
+            echo "        <p><i class='fas fa-money-bill'></i> Harga: $harga</p>";
+            echo "        <p><i class='fas fa-info-circle'></i> Status: $status</p>";
+            echo "        <p><i class='fas fa-gas-pump'></i> Jenis Bahan Bakar: $jenisBahanBakar</p>";
+            echo "        <div class='btn-sewa'>";
+            echo "            <a href='../pemesanan/pemesanan.php?id_mobil=$idMobil'>Sewa</a>";
             echo "        </div>";
             echo "    </div>";
             echo "</div>";
@@ -94,14 +120,4 @@ if (!isset($_SESSION['username'])) {
     ?>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 <?php include '../template/footer.php'; ?>

@@ -11,6 +11,8 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
 
 <style>
 .page-header {
@@ -37,14 +39,49 @@
     margin: 0 auto;
   }
 
+  .coustom-breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .coustom-breadcrumb li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .coustom-breadcrumb li a {
+    text-decoration: none;
+    color: #fff !important;
+    font-weight: bold;
+  }
+
+  .coustom-breadcrumb li a:hover {
+    text-decoration: none;
+    color: grey!important;
+  }
+
+  .coustom-breadcrumb li::after {
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .coustom-breadcrumb li:last-child::after {
+    content: none;
+  }
+
   /* Bagian Informasi Kontak */
   .container h2 {
     color: black;
     font-weight: bold;
   }
   .contact-info {
-    margin-top: 100px;
-    margin-bottom : 200px;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom : 100px;
     display: flex;
     align-items: center;
   }
@@ -53,6 +90,22 @@
     align-items: center;
     margin-right: 20px;
   }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .contact-info__item {
+    animation: fadeInLeft 0.5s ease-in-out;
+  }
+  
   .contact-info__icon {
     font-size: 24px;
     margin-right: 10px;
@@ -61,8 +114,6 @@
   .contact-info__text {
     color: #555555;
   }
-
-  /* Efek Hover */
   .contact-info__item:hover .contact-info__icon,
   .contact-info__item:hover .contact-info__text {
     color: blue;
@@ -79,8 +130,9 @@
         <h1>Hubungi Kami</h1>
       </div>
       <ul class="coustom-breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li>Hubungi Kami</li>
+        <li><a href="../home/home.php" style="color: white;">Home</a></li>
+        <li style="color: white;">></li>
+        <li style="color: white;">Hubungi Kami</li>
       </ul>
     </div>
   </div>

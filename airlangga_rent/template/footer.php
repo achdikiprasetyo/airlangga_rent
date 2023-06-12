@@ -14,6 +14,21 @@
 /*-----------------
 	3. Footer
 -------------------*/
+body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  ul,
+  li {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+
 .footer-top {
     background: #222222 none repeat scroll 0 0;
     color: #9d9d9d;
@@ -46,6 +61,7 @@
   }
   .footer-top ul li a {
     color: #fff;
+    text-decoration: none;
   }
   input.newsletter-input {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
@@ -60,12 +76,17 @@
     line-height: 18px;
     padding-top: 10px;
   }
+
   .footer-bottom {
     background: #191919 none repeat scroll 0 0;
     padding: 22px 0;
   }
-    .footer-bottom .footer_widget {
+  .footer-bottom .footer_widget {
 	margin:0 30px 0 0;
+  }
+  .footer-bottom p.copy-right,
+  .footer-bottom .footer_widget p {
+    font-weight: normal;
   }
   .footer_widget {
     color: #ffffff;
@@ -98,6 +119,9 @@
   .footer_widget ul li a i {
       margin:0px;
   }
+  .footer_widget ul li a:hover {
+    color: #ff0000; 
+  }
   .copy-right {
     color: #ffffff;
     font-size: 15px;
@@ -124,34 +148,43 @@
   .back-top a:hover, .back-top a:focus {
       color:#fff;
   }
+  .container{
+      margin-bottom: 20px;
+      padding: 10px 10px 10px 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
 
- 
-    </style>
+</style>
+
 </head>
-<footer>
 <footer>
   <div class="footer-top">
     <div class="container">
       <div class="row">
-      
         <div class="col-md-6">
           <h6>Tentang Kami</h6>
           <ul>
-          <li><a href="tentang_kami.php?">Tentang Kami</a></li>
-            <li><a href="page.php?type=privacy">Privacy</a></li>
-          <li><a href="page.php?type=terms">Terms of use</a></li>
-               <li><a href="admin/">Admin Login</a></li>
+            <li><a href="../home/tentang_kami.php?">Tentang Kami</a></li>
+            <li><a href="../template/privacy.php">Privacy</a></li>
+            <li><a href="../template/terms.php">Terms of Use</a></li>
+            <li><a href="admin/">Admin Login</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="map" id="contact">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d990.8594089462463!2d112.5378041!3d-7.4368615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e780a01884c2709%3A0x3ea23395de204a!2sPo%20New%20Airlangga!5e0!3m2!1sen!2sid!4v1624586512104!5m2!1sen!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
   <div class="footer-bottom">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-push-6 text-right">
           <div class="footer_widget">
-          <p>Connect with Us:</p>
+            <p>Connect with Us:</p>
             <ul>
               <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
               <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>

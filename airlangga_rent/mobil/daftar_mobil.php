@@ -19,19 +19,7 @@
   
 
 <style>
-    .car-container {
-  display: block;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.car-image {
-  margin-right: 0;
-  margin-bottom: 10px;
-}
-
-.page-header {
+  .page-header {
     background-image: url("daftarmobil.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,17 +37,54 @@
     z-index:1;
     position:relative;
   }
+  .page-heading h1 {
+    font-size: 40px;
+    color: #ffffff;
+    margin: 0 auto;
+  }
   .page-heading h2, .page-heading h1 {
     font-size:40px;
     color: #ffffff;
     margin: 0 auto;
+  }
+  .coustom-breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .coustom-breadcrumb li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .coustom-breadcrumb li a {
+    text-decoration: none;
+    color: #fff !important;
+    font-weight: bold;
+  }
+
+  .coustom-breadcrumb li a:hover {
+    text-decoration: none;
+    color: grey!important;
+  }
+
+  .coustom-breadcrumb li::after {
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .coustom-breadcrumb li:last-child::after {
+    content: none;
   }
 
   .search-form {
     margin-top:20px;
     margin-bottom: 20px;
   }
-
   .search-form input[type="text"] {
     width: 300px;
     padding: 8px;
@@ -76,18 +101,43 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
 
-  .btn-kembali{
+  .search-form button:hover {
+    background-color: darkred; /* Mengubah warna latar belakang saat di-hover */
+  }
+
+  .btn-kembali {
     padding: 8px 16px;
     font-size: 16px;
     margin-bottom: 20px;
-    margin-top: 140 px;
+    margin-top: 140px;
     background-color: red;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer; 
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-kembali:hover {
+    background-color: darkred; /* Mengubah warna latar belakang saat di-hover */
+  }
+
+  .search-form h2 {
+    color: black;
+  }
+
+  .car-image {
+    margin-right: 20px;
+  }
+
+  .car-image img {
+    width: 200px;
+    height: 150px;
   }
 
   .car-container {
@@ -98,53 +148,63 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    margin-left: 20px;
   }
 
-.car-image {
-  margin-right: 20px;
-}
-
-.car-image img {
-  width: 200px;
-  height: 150px;
-}
-
-  .car-container:hover {
-    transform: translateY(-5px);
-  }
-
-  .car-container h3 {
-    font-size: 24px;
-    color: #333;
+  .car-image {
+    margin-right: 0;
     margin-bottom: 10px;
   }
 
-  .car-container p {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 5px;
-  }
 
-  .car-container a {
-    display: inline-block;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    font-size: 16px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
+    .car-container:hover {
+      transform: translateY(-5px);
+    }
 
-  .car-container a:hover {
-    background-color: darkred;
-  }
-  .container{
-    margin-bottom: 20px;
-    padding: 10px 10px 10px 10px;
-  }
-  
+    .car-container h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+      margin-left: 20px;
+    }
+
+    .car-container p {
+      font-size: 16px;
+      color: #777;
+      margin-bottom: 5px;
+      margin-left: 20px;
+    }
+
+    .car-container a {
+      display: inline-block;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 8px 16px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .car-container a:hover {
+      background-color: darkred;
+    }
+    .container{
+      margin-bottom: 20px;
+      padding: 10px 10px 10px 10px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background-color: transparent;
+      margin-bottom: 0;
+    }
 </style>
 
 </head>
@@ -156,8 +216,9 @@
         <h1>Daftar Mobil</h1>
       </div>
       <ul class="coustom-breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li>Daftar Mobil</li>
+        <li><a href="../home/home.php" style="color: white;">Home</a></li>
+        <li style="color: white;">></li>
+        <li style="color: white;">Daftar Mobil</li>
       </ul>
     </div>
   </div>
@@ -167,6 +228,7 @@
 
 <div class="container">
   <div class="search-form">
+    <h2>Daftar Mobil</h2>
     <form action="#" method="GET">
         <input type="text" name="keyword" placeholder="Cari mobil...">
         <button type="submit">Cari</button>
@@ -212,4 +274,3 @@
 </div>
 
 <?php include '../template/footer.php'; ?>
-
