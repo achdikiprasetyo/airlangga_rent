@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 03:12 PM
+-- Generation Time: Jun 12, 2023 at 06:54 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -39,7 +39,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama`, `email`, `password`) VALUES
-(0, 'diki', 'diki@gmail.com', 'diki');
+(1, 'diki', 'diki@gmail.com', 'diki'),
+(2, 'admin', 'admin@admin.com', '21232f297a57a5a743894a0e4a801fc3'),
+(3, 'aku', 'aku', '89ccfac87d8d06db06bf3211cb2d69ed'),
+(4, 'admin1', 'admin1@admin.com', '21232f297a57a5a743894a0e4a801fc3');
 
 -- --------------------------------------------------------
 
@@ -88,7 +91,8 @@ CREATE TABLE `mobil` (
 
 INSERT INTO `mobil` (`id_mobil`, `merk`, `no_plat`, `stok`, `kapasitas`, `tahun`, `harga`, `status`, `id_admin`, `jenis_bahan_bakar`, `foto_mobil`) VALUES
 (2, 'nwq', '12hj', 2, 4, 2019, 200000, 'Tersedia', NULL, 'olinol', 0x2e2e2f666f746f5f6d6f62696c2f322e6a7067),
-(3, 'yanto', '12hj', 2, 4, 2019, 200000, 'Tersedia', NULL, 'olinol', 0x2e2e2f666f746f5f6d6f62696c2f332e6a7067);
+(3, 'Honda All New BR-V', 'W 2341 N', 2, 3, 2021, 210000, 'Tersedia', NULL, 'Pertamax', 0x2e2e2f666f746f5f6d6f62696c2f332e6a7067),
+(4, 'Honda All New BR-V', 'w 6323 nw', 1, 3, 2021, 210000, 'Tersedia', NULL, 'Bensin', 0x2e2e2f666f746f5f6d6f62696c2f342e6a7067);
 
 -- --------------------------------------------------------
 
@@ -156,7 +160,10 @@ INSERT INTO `pemesanan` (`id_pemesanan`, `id_user`, `id_mobil`, `id_admin`, `tgl
 (59, NULL, 3, NULL, '2023-06-11', '2023-06-18', 'Ya', NULL, NULL, 0, 'Transfer', 1400000),
 (60, NULL, 2, NULL, '2023-06-11', '2023-06-27', 'Ya', NULL, NULL, 0, 'Transfer', 3200000),
 (61, NULL, 3, NULL, '2023-06-11', '2023-06-12', 'Ya', NULL, NULL, 0, 'Transfer', 200000),
-(62, NULL, 3, NULL, '2023-06-11', '2023-06-28', 'Ya', NULL, NULL, 0, 'Transfer', 3400000);
+(62, NULL, 3, NULL, '2023-06-11', '2023-06-28', 'Ya', NULL, NULL, 0, 'Transfer', 3400000),
+(63, NULL, 2, NULL, '2023-06-12', '2023-06-25', 'Ya', NULL, NULL, 0, 'Transfer', 2600000),
+(64, NULL, 3, NULL, '2023-06-12', '2023-06-12', 'Ya', NULL, NULL, 0, 'Transfer', 0),
+(65, NULL, 2, NULL, '2023-06-12', '2023-06-27', 'Ya', NULL, NULL, 0, 'Transfer', 3000000);
 
 -- --------------------------------------------------------
 
@@ -256,6 +263,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `akun_user`
 --
 ALTER TABLE `akun_user`
@@ -265,7 +278,7 @@ ALTER TABLE `akun_user`
 -- AUTO_INCREMENT for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
-  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_pemesanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `pengembalian`
