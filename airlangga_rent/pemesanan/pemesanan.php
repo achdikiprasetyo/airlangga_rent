@@ -1,7 +1,6 @@
 <?php
 ob_start(); // Memulai output buffer
 
-
 include '../template/header.php';
 include '../koneksi.php';
 ?>
@@ -21,7 +20,6 @@ include '../koneksi.php';
         max-width: 220px;
         height: auto;
         margin-left: 16px;
-        
     }
 
     .car-details1 {
@@ -30,7 +28,6 @@ include '../koneksi.php';
         margin: 0;
         text-align: left;
         margin-right: 100px;
-
     }
 
     .car-details2 {
@@ -39,7 +36,6 @@ include '../koneksi.php';
         margin-left: auto; 
         text-align: right;
         margin-right: 100px;
-        
     }
 
     .button {
@@ -53,7 +49,6 @@ include '../koneksi.php';
         cursor: pointer;
         margin-top: 10px;
     }
-
 
     .date-form {
         margin-bottom: 10px;
@@ -76,21 +71,18 @@ include '../koneksi.php';
         margin-left: 16px;
         width: 300px;
         border: 1px solid #ccc;
-        
     }
 
-    h1{
+    h1 {
         margin-left: 16px;
-
     }
 
-    form{
+    form {
         padding: 30px 0px 30px 0px;
     }
-
 </style>
     
-    <h1>Detail Penyewaan</h1>
+<h1>Detail Penyewaan</h1>
     
 <?php
 if (isset($_GET['id_mobil'])) {
@@ -100,7 +92,6 @@ if (isset($_GET['id_mobil'])) {
         $tglPesan = $_POST['tgl_pesan'];
         $tglSelesai = $_POST['tgl_selesai'];
 
-        
         $sqlInsert = "INSERT INTO pemesanan (id_mobil, tgl_pesan, tgl_selesai) VALUES ('$idMobil', '$tglPesan', '$tglSelesai')";
         if ($conn->query($sqlInsert) === TRUE) {
             $idPemesanan = $conn->insert_id;
@@ -141,7 +132,6 @@ if (isset($_GET['id_mobil'])) {
         echo "        <p>Stok: $stok</p>";
         echo "    </div>";
         echo "</div>";
-        echo "<hr>";
 
         echo "<form action='pemesanan.php?id_mobil=$idMobil' method='POST'>";
         echo "    <div class='date-form'>";

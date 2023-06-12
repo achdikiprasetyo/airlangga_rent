@@ -12,20 +12,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   
 <style>
-.body{
-    margin: 0;
-    padding: 0;
-}
-
 .page-header {
-    background-image: url("TG.jpg");
+    background-image: url("vw.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border: 0 none;
     margin: 0 auto;
-    padding: 200px;
+    padding: 0;
     position: relative;
   }
+
   .page-header_wrap {
     padding:60px 0;
     position:relative;	
@@ -41,47 +37,82 @@
     margin: 0 auto;
   }
 
+  .coustom-breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .coustom-breadcrumb li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .coustom-breadcrumb li a {
+    text-decoration: none;
+    color: #fff !important;
+    font-weight: bold;
+  }
+
+  .coustom-breadcrumb li a:hover {
+    text-decoration: none;
+    color: grey!important;
+  }
+
+  .coustom-breadcrumb li::after {
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .coustom-breadcrumb li:last-child::after {
+    content: none;
+  }
+
   .about-us {
   padding: 60px 0;
-  background-color: #f8f8f8;
+  background-color: #ffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: left;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .about-us .row {
   justify-content: center;
 }
 
-.about-us h1 {
+.about-us h2 {
   font-size: 30px;
   font-weight: bold;
-  color: #333;
+  color: black;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .about-us p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #333;
-  text-align: justify;
+    font-size: 16px;
+    line-height: 1.8;
+    color: black;
+    text-align: justify; 
+    margin-left: 0;
+    margin-right: 0;
 }
 
-.about-us h5 {
-  font-size: 20px;
-  line-height: 1.8;
-  color: #333;
-  text-align: center;
+.about-us ul {
+    list-style-type: none;
 }
-    
-.col-md-6{
-    height: auto;
-    width: 1000px;
+
+
+.about-us ul li::before {
+    content: none;
 }
-    
+
 </style>
 
 </head>
@@ -90,10 +121,10 @@
   <div class="container">
     <div class="page-header_wrap">
       <div class="page-heading">
-        <h1>Syarat dan Ketentuan</h1>
+        <h1>Privacy Policy</h1>
       </div>
       <ul class="coustom-breadcrumb">
-        <li><a href="../home/home.php">Home</a></li>
+        <li><a href="../home/home.php" style="color: white;">Home</a></li>
       </ul>
     </div>
   </div>
@@ -105,51 +136,25 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h1>
-            Syarat Penggunaan Aplikasi Rental Mobil Airlangga
-        </h1>
+        <h2>Kebijakan Privasi</h2>
         <p>
-        Selamat datang di Aplikasi Rental Mobil. Privasi Anda sangat penting bagi kami,
-        dan kami berkomitmen untuk melindungi informasi pribadi yang Anda berikan saat menggunakan layanan kami.
-        Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda.
-        Dengan menggunakan aplikasi ini, Anda menyetujui kebijakan privasi ini.
+          Kebijakan Privasi Aplikasi Rental Mobil
         </p>
-        <br><br>
-        <h4> 1. Informasi yang Kami Kumpulkan </h4>
-         <p>Kami dapat mengumpulkan informasi pribadi Anda seperti nama, alamat email, nomor telepon, dan alamat saat Anda mendaftar atau menggunakan aplikasi kami.
-            Selain itu, kami juga dapat mengumpulkan informasi non-pribadi seperti jenis perangkat yang Anda gunakan, lokasi geografis, dan data penggunaan aplikasi.
-        </p>
-<br>
-           
-        <h4>2. Penggunaan Informasi</h4>
-        <p>Informasi pribadi yang kami kumpulkan digunakan untuk menyediakan layanan yang Anda minta, seperti proses reservasi dan pemesanan mobil.
-        Kami juga dapat menggunakan informasi tersebut untuk berkomunikasi dengan Anda mengenai pembaruan, penawaran khusus, atau layanan terkait yang mungkin menarik bagi Anda.
-        </p>
-<br>
-        <h4> 3. Penyimpanan dan Keamanan Informasi </h4>
-        <p>Kami mengambil langkah-langkah yang wajar untuk melindungi informasi pribadi Anda dari akses yang tidak sah, penggunaan yang salah, atau pengungkapan yang tidak sah.
-        Kami menyimpan informasi Anda pada sistem yang aman dan hanya menyimpannya selama diperlukan untuk tujuan yang ditentukan dalam kebijakan ini.
-        </p>
-<br>
-        <h4> 4. Pembagian Informasi dengan Pihak Ketiga </h4>
-        <p>Kami tidak akan menjual, menyewakan, atau menukar informasi pribadi Anda kepada pihak ketiga tanpa izin Anda, kecuali jika diwajibkan oleh hukum.
-        Namun, kami dapat membagikan informasi pribadi Anda kepada pihak ketiga yang bekerja sama dengan kami untuk menyediakan layanan yang Anda minta, seperti penyedia mobil sewaan.
-        </p>
-<br>
-        <h4> 5. Perubahan Kebijakan Privasi </h4>
-        <p>Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Setiap perubahan akan diumumkan melalui aplikasi atau melalui kontak yang Anda berikan kepada kami.
-        Pastikan untuk memeriksa kebijakan privasi ini secara berkala.
-        </p>
-<br>
-        <p>
-        Kami sangat menghargai privasi Anda dan berusaha untuk menjaga kepercayaan Anda dengan memberikan perlindungan yang tepat terhadap informasi pribadi Anda. 
-        Jika Anda memiliki pertanyaan atau kekhawatiran tentang kebijakan privasi kami, jangan ragu untuk menghubungi kami melalui informasi kontak yang tersedia di aplikasi ini.
-        </p>
-<br>
-        <h5>
-        Kami berterima kasih telah menggunakan Aplikasi Rental Mobil.
-        </h5>
-
+        <table>
+            <tr>
+                <td>
+                  <p>Selamat datang di Aplikasi Rental Mobil. Privasi Anda sangat penting bagi kami, dan kami berkomitmen untuk melindungi informasi pribadi yang Anda berikan saat menggunakan layanan kami. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda. Dengan menggunakan aplikasi ini, Anda menyetujui kebijakan privasi ini.</p>
+                    <ul>
+                        <li>1. <b>Informasi yang Kami Kumpulkan</b>  : Kami dapat mengumpulkan informasi pribadi Anda seperti nama, alamat email, nomor telepon, dan alamat saat Anda mendaftar atau menggunakan aplikasi kami. Selain itu, kami juga dapat mengumpulkan informasi non-pribadi seperti jenis perangkat yang Anda gunakan, lokasi geografis, dan data penggunaan aplikasi.</li>
+                        <li>2. <b>Penggunaan Informasi</b>  : Informasi pribadi yang kami kumpulkan digunakan untuk menyediakan layanan yang Anda minta, seperti proses reservasi dan pemesanan mobil. Kami juga dapat menggunakan informasi tersebut untuk berkomunikasi dengan Anda mengenai pembaruan, penawaran khusus, atau layanan terkait yang mungkin menarik bagi Anda.</li>
+                        <li>3. <b>Penyimpanan dan Keamanan Informasi</b>  :Kami mengambil langkah-langkah yang wajar untuk melindungi informasi pribadi Anda dari akses yang tidak sah, penggunaan yang salah, atau pengungkapan yang tidak sah. Kami menyimpan informasi Anda pada sistem yang aman dan hanya menyimpannya selama diperlukan untuk tujuan yang ditentukan dalam kebijakan ini.</li>
+                        <li>4. <b>Pembagian Informasi dengan Pihak Ketiga </b> : Kami tidak akan menjual, menyewakan, atau menukar informasi pribadi Anda kepada pihak ketiga tanpa izin Anda, kecuali jika diwajibkan oleh hukum. Namun, kami dapat membagikan informasi pribadi Anda kepada pihak ketiga yang bekerja sama dengan kami untuk menyediakan layanan yang Anda minta, seperti penyedia mobil sewaan.</li>
+                        <li>5. <b>Perubahan Kebijakan Privasi</b>  : Kami dapat memperbarui kebijakan privasi ini dari waktu ke waktu. Setiap perubahan akan diumumkan melalui aplikasi atau melalui kontak yang Anda berikan kepada kami. Pastikan untuk memeriksa kebijakan privasi ini secara berkala.</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <p>Kami sangat menghargai privasi Anda dan berusaha untuk menjaga kepercayaan Anda dengan memberikan perlindungan yang tepat terhadap informasi pribadi Anda. Jika Anda memiliki pertanyaan atau kekhawatiran tentang kebijakan privasi kami, jangan ragu untuk menghubungi kami melalui informasi kontak yang tersedia di aplikasi ini. Kami berterima kasih telah menggunakan Aplikasi Rental Mobil.</p>
       </div>
     </div>
   </div>

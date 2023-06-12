@@ -48,62 +48,98 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <style>
-        *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: inter;
-}
- body{
-  min-height: 100vh;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bg.jpg);
+      background-position: center;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container {
+      background-color: #D9D9D9;
+      width: 400px;
+      padding: 2%;
+      border-radius: 10px;
+    }
+    .container h1 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .input {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .input p {
+      flex-basis: 120px;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+    .input i {
+      color: #000000;
+      margin-right: 10px;
+    }
+    .input input {
+      flex-grow: 1;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .btn {
+      background: #FF0012;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      width: 100%;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .reg {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .reg a {
+      color: #FF0012;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #000000;
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 1;
+    }
+    .close-button:hover {
+        color: #FF0012;
+    }
 
-.container{
-  background-color: #D9D9D9;
-  width: auto;
-  height: auto;
-  padding: 2%;
-}
-
-.container h1{
-text-align: center;
-}
-
-.input td{
-  padding-bottom: 100px;
-}
-
-.btn{
-  background: #FF0012;
-  border-radius: 10px;
-  height: auto;
-  width: 300px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
-  align-items: center;
-  text-align: center;
-}
-
-.reg{
-  padding-top: 20px;
-}
     </style>
 </head>
 <body style="background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url(bg.jpg)">
     <div class="container">
         <form action="" method="POST" class="login-email">
+        <a href="../home/home.php" class="close-button"><i class="fas fa-times"></i></a>
         <h1 style="font-size: 2rem; font-weight:850px;">Login</h1>
         <br>
         <div class="input">
