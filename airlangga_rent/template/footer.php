@@ -168,7 +168,7 @@ body,
             <li><a href="../home/tentang_kami.php?">Tentang Kami</a></li>
             <li><a href="../template/privacy.php">Privacy</a></li>
             <li><a href="../template/terms.php">Terms of Use</a></li>
-            <li><a href="admin/">Admin Login</a></li>
+            <li><a href="../admin/admin-login.php">Admin Login</a></li>
           </ul>
         </div>
       </div>

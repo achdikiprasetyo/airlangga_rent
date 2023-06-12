@@ -8,35 +8,35 @@ session_start();
 # menonaktifkan laporan kesalahan php
 error_reporting(0);
 
-# memeriksa apakah sudah memiliki sesi yang aktif dengan username. Jika iya, akan diarahkan ke halaman index.php menggunakan fungsi header().
-if (isset($_SESSION['username'])) {
-    header("Location: ../mobil/daftar_mobil.php");
-    exit();
-}
+# memeriksa apakah sudah memiliki sesi yang aktif dengan nama. Jika iya, akan diarahkan ke halaman index.php menggunakan fungsi header().
+// if (isset($_SESSION['nama'])) {
+//     header("Location: ../mobil/daftar_mobil.php");
+//     exit();
+// }
 // else {
 //     header("Location: salah.php");
 // }
 
 # eksekusi ketika tombol submit diklik maka perintah akan dieksekusi
 if (isset($_POST['submit'])) {
-    # mengambil nilai input username
-    $username = $_POST['username'];
+    # mengambil nilai input nama
+    $nama = $_POST['nama'];
     # mengambil nilai input password dan disimpan pada variabel password
     $password = md5($_POST['password']);
     
     # sql mennyimpan data ke table users
-    $sql = "SELECT * FROM akun_user WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM admin WHERE nama='$nama' AND password='$password'";
     # eksekusi sql
     $result = mysqli_query($conn, $sql);
-    # memeriksa username dan pasword cocok dengan yang didaftarkan pada sql
+    # memeriksa nama dan pasword cocok dengan yang didaftarkan pada sql
     if ($result->num_rows > 0) {
         # mengambil baris pertama dari data
         $row = mysqli_fetch_assoc($result);
-        #menyimpam username pada username
-        $_SESSION['username'] = $row['username'];
-        header("location: ../index.php");
+        #menyimpam nama pada nama
+        $_SESSION['nama'] = $row['nama'];
+        header("location: index.php");
     } else {
-        echo "<script> alert('Wooops! username atau password anda salah')</script>";
+        echo "<script> alert('Wooops! nama atau password anda salah')</script>";
     }
 }
 ?>
@@ -138,14 +138,14 @@ if (isset($_POST['submit'])) {
 </head>
 <body style="background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url(bg.jpg)">
     <div class="container">
-        <form action="" method="POST" class="login-username">
-        <a href="../home/home.php" class="close-button"><i class="fas fa-times"></i></a>
-        <h1 style="font-size: 2rem; font-weight:850px;">Login</h1>
+        <form action="" method="POST" class="login-nama">
+        <a href="index.php" class="close-button"><i class="fas fa-times"></i></a>
+        <h1 style="font-size: 2rem; font-weight:850px;">Login Admin</h1>
         <br>
         <div class="input">
-            <p>Username</p>
+            <p>nama</p>
             <td><i class="fa-solid fa-user" style="color: #000000;"></i></td>
-            <td><input type="username" placeholder="username" name="username" value="<?php echo $username;?>"required></td>
+            <td><input type="nama" placeholder="nama" name="nama" value="<?php echo $nama;?>"required></td>
         </div>
         <br>
         <div class="input">
@@ -155,8 +155,8 @@ if (isset($_POST['submit'])) {
         </div>
         <br>
         <div class="input"><button name="submit" class="btn">Login</button></div>
-        <p class="reg">Doesn't have an Account ?
-            <a href="register.php">Register</a>
+        <p class="reg">Tidak memiliki akun admin ?
+            <a href="admin-register.php">Register</a>
         </p>
         </form>
         </div>

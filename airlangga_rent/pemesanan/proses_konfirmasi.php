@@ -23,6 +23,11 @@
             cursor: pointer;
             color: aliceblue;
         }
+
+        table tr td{
+            font-style: bold;
+        }
+        
     </style>
 </head>
 <body>
@@ -36,27 +41,24 @@
             $totalHarga = $hargaTotal + $biayaPengiriman;
 
             echo "<hr>";
-            if ($metodePembayaran == "Cash") {
-                echo "Metode Pembayaran: Cash";
-            } elseif ($metodePembayaran == "Transfer") {
-                echo "Metode Pembayaran: Transfer";
-                echo "<table>";
-                echo "    <tr>";
-                echo "        <td>BCA :</td>";
-                echo "        <td>082157126</td>";
-                echo "    </tr>";
-                echo "    <tr>";
-                echo "        <td>BNI : </td>";
-                echo "        <td>98712537</td>";
-                echo "    </tr>";
-                echo "    <tr>";
-                echo "        <td>Shopepay : </td>";
-                echo "        <td>082247424827</td>";
-                echo "    </tr>";
-                echo "</table>";
-            } else {
-                echo "Metode Pembayaran tidak valid.";
-            }
+            echo '<div style="font-weight: bold;">';
+            echo 'Metode Pembayaran: Transfer';
+            echo '<table>';
+            echo '    <tr>';
+            echo '        <td>BCA :</td>';
+            echo '        <td>082157126</td>';
+            echo '    </tr>';
+            echo '    <tr>';
+            echo '        <td>BNI :</td>';
+            echo '        <td>98712537</td>';
+            echo '    </tr>';
+            echo '    <tr>';
+            echo '        <td>Shopepay :</td>';
+            echo '        <td>082247424827</td>';
+            echo '    </tr>';
+            echo '</table>';
+            echo '</div>';
+            
             echo "<hr>";
             echo "<br>";
             echo "<h3 id='hargaTotal'>Total Harga yang harus dibayar:  Rp $totalHarga,-</h3>";

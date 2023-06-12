@@ -141,7 +141,7 @@
   }
 
   .car-container {
-    background-color: #f8f8f8;
+    background-color: #e5e5e5;
     padding: 20px;
     margin-bottom: 20px;
     transition: transform 0.3s ease;
@@ -246,8 +246,8 @@
     while ($row = $result->fetch_assoc()) {
       $idMobil = $row["id_mobil"];
       $merk = $row["merk"];
-      $noPlat = $row["no_plat"];
-      $stok = $row["stok"];
+      $harga = $row["harga"];
+      $tahun = $row["tahun"];
       $fotoMobil = $row["foto_mobil"];
   
       echo "<div class='car-container'>";
@@ -256,8 +256,8 @@
       echo "    </div>";
       echo "    <div class='car-details'>";
       echo "        <h3>$merk</h3>";
-      echo "        <p>No. Plat: $noPlat</p>";
-      echo "        <p>Stok: $stok</p>";
+      echo "        <p>Harga : Rp$harga / hari</p>";
+      echo "        <p>Tahun : Rp$tahun</p>";
       echo "        <a href='detail_mobil.php?id_mobil=$idMobil'>Detail</a>";
       echo "    </div>";
       echo "</div>";

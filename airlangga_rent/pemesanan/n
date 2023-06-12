@@ -1,0 +1,212 @@
+<?php include 'header.php'; ?>
+<?php include 'koneksi.php'; ?>
+<?php include 'bootstrap.php'; ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pemesanan</title>
+    <style>
+        .kotak-abu {
+            display: block;
+            background-color: lightgray;
+            padding: 10px;
+            margin: 20px;
+            font-weight: bold;
+            border-bottom: 10px;
+        }
+
+        .garis-tebal {
+            display: block;
+            top: 10px;
+            background-color: black;
+            border-bottom: 10px solid black;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.5);
+            float: right;
+            margin-top: 10px;
+        }
+
+        .car-container {
+            display: flex;
+            align-items: flex-start;
+            margin: 5px;
+            margin-bottom: 20px;
+        }
+
+        .car-image {
+            margin-right: 20px;
+        }
+
+        .car-image img {
+            max-width: 220px;
+            height: auto;
+            margin-left: 16px;
+        }
+
+        .car-details1 {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            text-align: left;
+            margin-right: 100px;
+        }
+
+        .car-details2 {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+            text-align: right;
+            margin-right: 100px;
+        }
+        
+        form {
+            margin-left: 16px;
+        }
+
+        .tombol{
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 10px ;
+            padding: 11px 40px;
+            margin-top: 10px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class='kotak-abu'>
+        <h2>Detail Pemesanan</h2>
+    </div>
+    <?php
+    if (isset($_GET['id_pemesanan'])) {
+        $idPemesanan = $_GET['id_pemesanan'];
+
+        $sql = "SELECT pemesanan.*, mobil.merk, mobil.no_plat, mobil.stok, mobil.kapasitas, mobil.harga, mobil.status, mobil.foto_mobil, mobil.harga * DATEDIFF(pemesanan.tgl_selesai, pemesanan.tgl_pesan) AS harga_total
+        FROM pemesanan 
+        INNER JOIN mobil ON pemesanan.id_mobil = mobil.id_mobil 
+        WHERE pemesanan.id_pemesanan = $idPemesanan";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+
+            $idMobil = $row["id_mobil"];
+            $tglPesan = $row["tgl_pesan"];
+            $tglSelesai = $row["tgl_selesai"];
+            $hargaTotal = $row["harga_total"];
+
+            $merk = $row["merk"];
+            $noPlat = $row["no_plat"];
+            $stok = $row["stok"];
+            $kapasitas = $row["kapasitas"];
+            $harga = $row["harga"];
+            $status = $row["status"];
+            $fotoMobil = $row["foto_mobil"];
+        } else {
+            echo "Pemesanan tidak ditemukan.";
+            exit;
+        }
+    } else {
+        echo "ID pemesanan tidak ditemukan.";
+        exit;
+    }
+    ?>
+
+    <div class="car-container">
+        <div class="car-image">
+            <img src="images/<?php echo $fotoMobil; ?>" alt="Foto Mobil">
+        </div>
+        <div class="car-details1">
+            <p><b>Merk:</b> <?php echo $merk; ?></p>
+            <p><b>No. Plat:</b> <?php echo $noPlat; ?></p>
+            <p><b>Stok:</b> <?php echo $stok; ?></p>
+            <p><b>Kapasitas:</b> <?php echo $kapasitas; ?></p>
+            <p><b>Harga:</b> Rp <?php echo number_format($harga, 0, ',', '.'); ?>/hari</p>
+            <p><b>Status:</b> <?php echo $status; ?></p>
+        </div>
+        <div class="car-details2">
+            <p><b>Tanggal Pesan:</b> <?php echo $tglPesan; ?></p>
+            <p><b>Tanggal Selesai:</b> <?php echo $tglSelesai; ?></p>
+            <p><b>Total Harga:</b> Rp <?php echo number_format($hargaTotal, 0, ',', '.'); ?></p>
+        </div>
+    </div>
+
+    <div class='kotak-abu'>
+        <h2>Informasi Pengiriman</h2>
+    </div>
+
+    <form action="proses_konfirmasi.php" method="POST">
+        <input type="hidden" name="id_pemesanan" value="<?php echo $idPemesanan; ?>">
+
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="telepon">Telepon:</label>
+            <input type="tel" id="telepon" name="telepon" required>
+        </div>
+
+        <div class="form-group">
+            <label for="checkbox">Tambahkan biaya pengiriman (+ Rp 75,000)</label>
+            <input type="checkbox" id="iya" onclick="updateHargaTotal()">
+        </div>
+
+        <h2>Rincian Pesanan</h2>
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td id='hargaTotal'><?php echo $hargaTotal; ?></td>
+            </tr>
+            <tr>
+                <td>Biaya Pengiriman</td>
+                <td id="biayaPengiriman">0</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="total"><?php echo $hargaTotal; ?></td>
+            </tr>
+        </table>
+
+        <button class="tombol" type="submit">Konfirmasi Pemesanan</button>
+    </form>
+
+    <script>
+        function updateHargaTotal() {
+            var hargaTotal = <?php echo $hargaTotal; ?>;
+            var biayaPengiriman = document.getElementById("biayaPengiriman");
+            var total = document.getElementById("total");
+
+            if (document.getElementById("iya").checked) {
+                biayaPengiriman.textContent = "75000";
+                total.textContent = hargaTotal + 75000;
+            } else {
+                biayaPengiriman.textContent = "0";
+                total.textContent = hargaTotal;
+            }
+        }
+    </script>
+</body>
+</html>
