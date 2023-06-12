@@ -36,7 +36,7 @@
     color: #ffffff;
     margin: 0 auto;
   }
-
+/* about us css */
   .about-us {
   padding: 60px 0;
   background-color: #ffff;
