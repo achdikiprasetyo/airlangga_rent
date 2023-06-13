@@ -4,31 +4,70 @@
 <html>
 <head>
     <title>Data Mobil</title>
-    <style>
-        .data-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
+   <style>
+    /* Gaya umum */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
 
-        .mobil-card {
-            width: 300px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin: 10px;
-        }
+    h1 {
+        text-align: center;
+    }
 
-        .mobil-card img {
-            max-width: 100%;
-            height: auto;
-        }
+    /* Container untuk kartu mobil */
+    .data-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Mengatur posisi horizontal menjadi tengah */
+        gap: 20px; /* Jarak antara kartu */
+    }
 
-        .mobil-card .edit-link,
-        .mobil-card .hapus-link {
-            display: block;
-            text-align: right;
-            margin-top: 10px;
-        }
-    </style>
+    /* Kartu mobil */
+    .mobil-card {
+        width: 300px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px; /* Mengatur jarak vertikal antar kartu */
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .mobil-card:hover {
+        transform: translateY(-5px); /* Efek mengangkat kartu saat dihover */
+    }
+
+    .mobil-card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .mobil-card p {
+        margin: 8px 0;
+    }
+
+    .mobil-card .edit-link {
+        display: block;
+        text-align: right;
+        margin-top: 10px;
+        color: #999;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    .mobil-card .hapus-link {
+        display: block;
+        text-align: right;
+        margin-top: 10px;
+        color: #999;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+</style>
 </head>
 <body>
     <h1>Data Mobil</h1>
