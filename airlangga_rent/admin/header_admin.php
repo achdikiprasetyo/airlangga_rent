@@ -101,7 +101,7 @@
         <li><a href="admin_add_mobil.php">Tambah Mobil</a></li>
         <li><a href="view_edit.php">Daftar Mobil</a></li>
         <li><a href="view_pengembalian.php">Input Pengembalian</a></li>
-        <li><a href="pengembalian.php">Laporan PengembalianI</a></li>
+        <li><a href="pengembalian.php">Laporan Pengembalian</a></li>
     </div>
 </body>
 </html>
