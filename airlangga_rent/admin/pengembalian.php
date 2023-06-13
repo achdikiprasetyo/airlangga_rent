@@ -8,7 +8,7 @@ $sql = "SELECT * FROM pengembalian";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    echo "<table>
+    echo "<table style : border : 1px>
             <tr>
                 <th>ID Pengembalian</th>
                 <th>ID Pemesanan</th>
