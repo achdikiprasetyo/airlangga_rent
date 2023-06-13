@@ -46,36 +46,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Edit Mobil</title>
 </head>
 <body>
+    <div class="container">
     <h1>Edit Mobil</h1>
-    <form action="mobil_edit.php?id=<?php echo $idMobil; ?>" method="post" enctype="multipart/form-data">
-        <label for="merk">Merk:</label>
-        <input type="text" name="merk" value="<?php echo $row['merk']; ?>" required><br>
+    <table>
+        <form action="mobil_edit.php?id=<?php echo $idMobil; ?>" method="post" enctype="multipart/form-data">
 
-        <label for="no_plat">No. Plat:</label>
-        <input type="text" name="no_plat" value="<?php echo $row['no_plat']; ?>" required><br>
+        <tr>
+            <td><label for="merk">Merk:</label></td>
+            <td><input type="text" name="merk" value="<?php echo $row['merk']; ?>" required></td>
+        </tr>
+        
 
-        <label for="stok">Stok:</label>
-        <input type="number" name="stok" value="<?php echo $row['stok']; ?>" required><br>
+        <tr>
+            <td><label for="no_plat">No. Plat:</label></td>
+            <td><input type="text" name="no_plat" value="<?php echo $row['no_plat']; ?>" required><br></td>
+        </tr>
+        
+        <tr>
+            <td><label for="stok">Stok:</label></td>
+            <td><input type="number" name="stok" value="<?php echo $row['stok']; ?>" required><br></td>
+        </tr>
 
-        <label for="kapasitas">Kapasitas:</label>
-        <input type="number" name="kapasitas" value="<?php echo $row['kapasitas']; ?>" required><br>
+        <tr>
+            <td><label for="kapasitas">Kapasitas:</label></td>
+            <td><input type="number" name="kapasitas" value="<?php echo $row['kapasitas']; ?>" required><br></td>
+        </tr>
 
-        <label for="tahun">Tahun:</label>
-        <input type="number" name="tahun" value="<?php echo $row['tahun']; ?>" required><br>
+        <tr>
+            <td><label for="tahun">Tahun:</label></td>
+            <td><input type="number" name="tahun" value="<?php echo $row['tahun']; ?>" required><br></td>
+        </tr>
 
-        <label for="harga">Harga:</label>
-        <input type="number" name="harga" value="<?php echo $row['harga']; ?>" required><br>
+        <tr>
+            <td><label for="harga">Harga:</label></td>
+            <td><input type="number" name="harga" value="<?php echo $row['harga']; ?>" required><br></td>
+        </tr>
+        
 
-        <label for="status">Status:</label>
-        <select name="status" required>
-            <option value="Tersedia" <?php if ($row['status'] == 'Tersedia') echo 'selected'; ?>>Tersedia</option>
-            <option value="Disewakan" <?php if ($row['status'] == 'Disewakan') echo 'selected'; ?>>Disewakan</option>
-        </select><br>
+        <tr>
+            <td><label for="status">Status:</label></td>
+            <td>
+                <select name="status" required>
+                <option value="Tersedia" <?php if ($row['status'] == 'Tersedia') echo 'selected'; ?>>Tersedia</option>
+                <option value="Disewakan" <?php if ($row['status'] == 'Disewakan') echo 'selected'; ?>>Disewakan</option>
+                </select><br>
+            </td>
+        </tr>
 
-        <label for="jenis_bahan_bakar">Jenis Bahan Bakar:</label>
-        <input type="text" name="jenis_bahan_bakar" value="<?php echo $row['jenis_bahan_bakar']; ?>" required><br>
-
-        <input type="submit" value="Update Mobil">
+        <tr>
+            <td><label for="jenis_bahan_bakar">Jenis Bahan Bakar:</label></td>
+            <td><input type="text" name="jenis_bahan_bakar" value="<?php echo $row['jenis_bahan_bakar']; ?>" required><br></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Update Mobil"></td>
+        </tr>
     </form>
+    </table>
+    </div>
 </body>
 </html>
