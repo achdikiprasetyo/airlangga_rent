@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,7 +151,7 @@
         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
       </ul>
     </div>
-    <?php session_start(); ?>
+    
     <?php if(isset($_SESSION['username'])) { ?>
       <a class="login-register-button" href="../login/logout.php">LOGOUT</a>
     <?php } else { ?>
