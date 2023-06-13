@@ -90,6 +90,8 @@
       margin-left: 400px;
       margin-top: 0;
       vertical-align: middle;
+      position: absolute;
+      padding-left: 600px;
     }
 
     .social-follow ul {
