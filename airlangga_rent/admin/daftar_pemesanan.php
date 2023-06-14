@@ -3,13 +3,13 @@
 // Koneksi ke database
 include '../koneksi.php';
 
-// Tampilkan laporan pengembalian
-$sql = "SELECT * FROM pengembalian";
+// Tampilkan daftar pemesanan
+$sql = "SELECT * FROM pemesanan";
 $result = $conn->query($sql);
 
 echo "<html>
         <head>
-            <title>Laporan Pengembalian</title>
+            <title>Daftar Pemesanan</title>
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -39,52 +39,59 @@ echo "<html>
                     background-color: #f2f2f2;
                 }
 
-                tr:hover {
-                    background-color: #e9e9e9;
-                    cursor: pointer;
-                }
-                
                 .delete-link button {
                     background-color: red;
                     color: white;
                     border: none;
                     padding: 5px 10px;
                     border-radius: 4px;
+                    transition: background-color 0.3s ease;
                 }
-                
+
                 .delete-link button:hover {
+                    background-color: darkred;
+                }
+
+                tr:hover {
+                    background-color: #e9e9e9;
+                }
+
+                .delete-link button:active {
                     background-color: darkred;
                 }
             </style>
         </head>
         <body>
-            <h1>Laporan Pengembalian</h1>";
+            <h1>Daftar Pemesanan</h1>";
 
 if ($result->num_rows > 0) {
     echo "<table>
             <tr>
-                <th>ID Pengembalian</th>
                 <th>ID Pemesanan</th>
+                <th>ID User</th>
+                <th>ID Mobil</th>
                 <th>ID Admin</th>
-                <th>Tanggal Kembali</th>
-                <th>Kondisi Mobil</th>
-                <th>Denda</th>
-                <th></th>
+                <th>Tanggal Pesan</th>
+                <th>Tanggal Selesai</th>
+                <th>Metode Pembayaran</th>
+                <th>Harga Total</th>
             </tr>";
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
-                <td>".$row['id_pengembalian']."</td>
                 <td>".$row['id_pemesanan']."</td>
+                <td>".$row['id_user']."</td>
+                <td>".$row['id_mobil']."</td>
                 <td>".$row['id_admin']."</td>
-                <td>".$row['tgl_kembali']."</td>
-                <td>".$row['kondisi_mobil']."</td>
-                <td>".$row['denda']."</td>
-                <td><a class='delete-link' href='hapus_pengembalian.php?id=".$row['id_pengembalian']."'><button>Hapus</button></a></td>
+                <td>".$row['tgl_pesan']."</td>
+                <td>".$row['tgl_selesai']."</td>
+                <td>".$row['metode_pembayaran']."</td>
+                <td>".$row['harga_total']."</td>
+                <td><a class='delete-link' href='hapus_pemesanan.php?id=".$row['id_pemesanan']."'><button>Hapus</button></a></td>
             </tr>";
     }
     echo "</table>";
 } else {
-    echo "<p>Tidak ada laporan pengembalian.</p>";
+    echo "<p>Tidak ada pemesanan mobil.</p>";
 }
 
 echo "</body>

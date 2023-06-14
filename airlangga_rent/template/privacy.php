@@ -81,6 +81,19 @@
   text-align: left;
   margin-left: 70px;
   margin-right: 70px;
+  opacity: 0; /* Initially hidden */
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        }
+    100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
 }
 
 .about-us .row {

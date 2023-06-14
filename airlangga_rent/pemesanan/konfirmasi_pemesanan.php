@@ -9,17 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konfirmasi Pemesanan</title>
     <style>
+        /* Gaya-gaya lainnya */
+
         .kotak-abu {
             display: block;
             background-color: lightgray;
             padding: 10px;
-            margin: 20px;
+            margin: 10px;
             font-weight: bold;
             border-bottom: 10px;
         }
 
         label {
-            margin-right: 10px;
+            margin-right: 20px;
         }
 
         input[type="radio"] {
@@ -65,14 +67,22 @@
             margin-left: 16px;
         }
 
-        .tombol{
+        .tombol {
             background-color: green;
             color: white;
             border: none;
-            border-radius: 10px ;
+            border-radius: 10px;
             padding: 11px 40px;
             margin-top: 10px;
             margin-bottom: 16px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .tombol:hover {
+            background-color: darkgreen;
         }
     </style>
 </head>
@@ -161,7 +171,7 @@
                 echo '</div>';
 
                 //rincian harga
-                echo "    <h2>Rincian Pesanan</h2>";
+                echo "    <h2>Rincian Harga Pesanan</h2>";
                 echo "    <table>";
                 echo "        <tr>";
                 echo "            <td>Subtotal</td>";

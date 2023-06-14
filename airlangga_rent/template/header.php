@@ -91,7 +91,7 @@
       margin-top: 0;
       vertical-align: middle;
       position: absolute;
-      padding-left: 600px;
+      padding-left: 400px;
     }
 
     .social-follow ul {
@@ -147,10 +147,10 @@
     </div>
     <div class="social-follow">
       <ul>
-        <li><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.facebook.com"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/?lang=en-id"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.linkedin.com"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
       </ul>
     </div>
     
